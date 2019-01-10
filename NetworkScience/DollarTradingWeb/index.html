@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wealth Distribution</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">Wealth Distribution</a>
+  </nav>
+  <div class="container">
+
+    <div class="row">
+      <p class="mt-5 mb-5">
+        The Wealth Distribution Simulator simulates how wealth distributes across a population of N people that each
+        start with M dollars.
+        The simulator takes place over T time intervals. At each time interval, every person in the population gives an
+        amount, G, to another
+        person in the population.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <form action="index.html" method="post" id="params">
+          <div class="form-group">
+            <label>Bar Color</label>
+            <input type="color" id="c" class="form-control" value="#007bff">
+            <small class="form-text text-muted">Valid Hex Code</small>
+          </div>
+          <div class="form-group">
+            <label>Population (N)</label>
+            <input type="number" step="1" min="10" max="100" class="form-control" id="n" value="100">
+            <small class="form-text text-muted">1-100</small>
+          </div>
+          <div class="form-group">
+            <label>Dollars (M)</label>
+            <input type="number" step="1" min="10" max="1000" class="form-control" id="m" value="100">
+            <small class="form-text text-muted">10-1000</small>
+          </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Gift Amount (G)</label>
+          <input type="number" step="1" min="1" max="10" class="form-control" id="g" value="1">
+          <small class="form-text text-muted">1-10</small>
+        </div>
+        <div class="form-group">
+          <label>Time Intervals (T)</label>
+          <input type="number" step="1" min="10" max="1000" class="form-control" id="t" value="500">
+          <small class="form-text text-muted">10-1000</small>
+        </div>
+        <div class="form-group">
+          <label>Speed (Millisecs)</label>
+          <input type="number" step="1" min="250" max="1000" class="form-control" id="s" value="500">
+          <small class="form-text text-muted">250-1000</small>
+        </div>
+        <button class="btn btn-primary btn-block">Start Simulation</button>
+        </form>
+      </div>
+
+      <div class="col-md-8">
+        <div id="graphDiv"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
